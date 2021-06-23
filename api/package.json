@@ -2,11 +2,13 @@
   "name": "web-interview-api",
   "version": "0.0.1",
   "description": "web interview api resources",
-  "main": "index.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
+    "start": "node .",
     "start:dev": "nodemon -w src -e ts,json,gql -x ts-node src/index.ts",
     "build": "tsc -b",
+    "rebuild": "yarn clean && yarn build",
     "postbuild": "copyfiles -u 1 src/graphql/schema.gql dist",
     "clean": "rimraf dist tsconfig.tsbuildinfo"
   },
