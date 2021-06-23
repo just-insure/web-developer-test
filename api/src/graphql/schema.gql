@@ -1,0 +1,26 @@
+type Query {
+  trips: [Trip]!
+  trip(id: ID!): Trip
+}
+
+type Trip {
+  id: String!
+  start: DateTime!
+  end: DateTime!
+  duration: Duration!
+  """
+  Distance travelled in km
+  """
+  distance: Float!
+  cost: USCurrency!
+  locations: [Location!]!
+}
+
+type Location {
+  timestamp: DateTime!
+  altitude: Float!
+  heading: Float!
+  latitude: Latitude!
+  longitude: Longitude!
+  speed: Float!
+}
